@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمونه کار های من</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="title-box">   
+    <div class="title-logo-box">
+      <div class="title-logo">
+        <p>Amir.dev</p>
+      </div>
+      <button class="title-btn-hmr">
+        <hr>
+        <hr>
+        <hr>
+      </button>
+
+      <div class="nav-window-bar">
+        <ul class="nav-window-menu">
+          <li><a href="../index.html">صفحه اصلی</a></li>
+          <li><a href="./about-page.html">درباره من</a></li>
+          <li><a href="./contact-page.html">تماس با من</a></li>
+          <li><a href="./project-page.html">نمونه کار </a></li>
+          <li><a href="./service-page.html">خدمات من</a></li>
+        </ul>
+      </div>
+      <div class="title-hidden-box">
+        <nav class="title-nav-bar">
+          <ul>
+            <li><a href="./index.html">صفحه اصلی</a></li>
+            <li><a href="./about-page.html">درباره من</a></li>
+            <li><a href="./contact-page.html">تماس با من</a></li>
+            <li><a href="./project-page.html">نمونه کار </a></li>
+            <li><a href="./service-page.html">خدمات من</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="title-countainer-box">
+      <div class="title-image-box">
+          <img src="../images/profile image.jpg" alt="عکس پروفایل">
+      </div>
+      <div class="title-text-box">
+          <h1>سلام،من <span>امیر حسین عباس پور </span>هستم</h1>
+          <p class="title-sub">توسعه دهنده وب | مترجم زبان انگلیسی | تایپیست حرفه ای</p>
+          <p class="title-discription">اینجا مجموعه‌ای از پروژه‌هایی که تا به امروز انجام داده‌ام را مشاهده می‌کنید. هر پروژه نشان‌دهنده‌ی تخصص، دقت و خلاقیت من در طراحی و پیاده‌سازی وب‌سایت‌ها و خدمات دیگر است.
+            با دیدن این نمونه‌ها، می‌تونید کیفیت کار من رو بهتر درک کنید و تصمیم به همکاری بگیرید.
+          </p>
+          <a href="../pages/contact-page.html" class="title-contact-link">ارتباط با من</a>
+      </div>
+    </div>
+  </header>
+    <main>
+      <div class="projects-box">
+        <h2>نمونه کار های من</h2>
+
+        <div class="project-items">
+            <div class="project-item">
+                <img src="../images/transforming-website.png" alt="نمونه کار طراحی وب سایت">
+                <h3>نمونه کا رطراحی وب سایت شرکتی</h3>
+                <p>طراحی ریسپانسیو شده و حرفه ای با HTML,CSS,JAVASCRIPT</p>
+                <a href="http://amir-a1388.github.io/transforming-website" class="project-item-link" target="_blank">مشاهده وب سایت</a>
+            </div>
+            <div class="project-item">
+                <img src="../images/translating-project.png" alt="نمونه کار ترجمه مقاله تخصصی">
+                <h3>نمونه کار ترجمه مقاله انگلیسی دانشجویی</h3>
+                <p>ترجمه انگلیسی به فارسی متون علمی، فرهنگی و عمومی با دقت بالا.</p>
+                <a href="../projects/translate project/Translate2.pdf" class="project-item-link" target="_blank">مشاهده فایل PDF</a>
+            </div>
+            <div class="project-item">
+                <img src="../images/typing project.png" alt="نمونه کار تایپ مقاله دانشجویی">
+                <h3>نمونه کار تایپ فایل فارسی</h3>
+                <p>تایپ فایل 100 صفحه ای در زمینه تاثیر گاز های گلخانه ای بر کره زمین</p>
+                <a href="../projects/type project/Type3.pdf" class="project-item-link" target="_blank">مشاهده فایل PDF</a>
+            </div>
+            <div class="project-item">
+              <img src="../images/dentist project.png" alt="نمونه کار طراحی وب سایت">
+              <h3>نمونه کار طراحی وب سایت در زمینه پزشکی</h3>
+              <p>با استفاده از HTML,CSS,JAVASCRIPT همراه با رعایت اصول برنامه نویسی و ریسپانسیو شده</p>
+              <a href="./pages/project-page.html" class="project-item-link" target="_blank">مشاهده وب سایت</a>
+          </div>
+        </div>
+    </div>
+    </main>
+    <footer class="footer-content">
+        <div class="footer-text-box">
+          <p> 2025 &copy; amir.dev |تمامی حقوق این سایت محفوض می باشد</p>
+        </div>
+    </footer>
+
+    <script>
+      const menu = document.querySelector(".title-hidden-box");
+      const btn = document.querySelector(".title-btn-hmr");
+      const overlay = document.querySelector('.overlay');
+
+      btn.addEventListener("click", ()=>{
+        menu.classList.toggle('show');
+        overlay.classList.toggle('show');
+      });
+
+      overlay.addEventListener('click', () => {
+        menu.classList.remove('show');
+        overlay.classList.remove('show');
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با من</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="title-box">   
+    <div class="title-logo-box">
+      <div class="title-logo">
+        <p>Amir.dev</p>
+      </div>
+      <button class="title-btn-hmr">
+        <hr>
+        <hr>
+        <hr>
+      </button>
+
+      <div class="nav-window-bar">
+        <ul class="nav-window-menu">
+          <li><a href="../index.html">صفحه اصلی</a></li>
+          <li><a href="./about-page.html">درباره من</a></li>
+          <li><a href="./contact-page.html">تماس با من</a></li>
+          <li><a href="./project-page.html">نمونه کار </a></li>
+          <li><a href="./service-page.html">خدمات من</a></li>
+        </ul>
+      </div>
+      <div class="title-hidden-box">
+        <nav class="title-nav-bar">
+          <ul>
+            <li><a href="../index.html">صفحه اصلی</a></li>
+            <li><a href="./about-page.html">درباره من</a></li>
+            <li><a href="./contact-page.html">تماس با من</a></li>
+            <li><a href="./project-page.html">نمونه کار </a></li>
+            <li><a href="./service-page.html">خدمات من</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="title-countainer-box">
+      <div class="title-image-box">
+          <img src="../images/profile image.jpg" alt="عکس پروفایل">
+      </div>
+      <div class="title-text-box">
+          <h1>سلام،من <span>امیر حسین عباس پور </span>هستم</h1>
+          <p class="title-sub">توسعه دهنده وب | مترجم زبان انگلیسی | تایپیست حرفه ای</p>
+          <p class="title-discription">یا به دنبال همکاری با یک طراح سایت خلاق هستی؟
+            پروژه‌ای در ذهن داری که نیاز به طراحی حرفه‌ای داره؟ یا فقط می‌خوای درباره‌ی یک ایده با هم صحبت کنیم؟ خوشحال می‌شم ازت بشنوم!
+
+          </p>
+      </div>
+    </div>
+  </header>
+      <main>
+        <div class="contact-items">
+          <div class="contact-box">
+              <h2>فرم درخواست</h2>
+              <div class="form-box">
+                <form action="https://formspree.io/f/mvgrnzlq" method="POST" id="form-detail-box">
+                    <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
+                    <input type="email" name="email" placeholder="ایمیل" required>
+                    <input type="number" name="phone number" placeholder="شماره تماس" required>
+                    <textarea rows="5" name="message" placeholder="درخواست و پیام..."></textarea>
+                    <button type="submit">ارسال فرم</button>
+                    <div id="successMessage" style="display:none; color: green; margin-top: 10px; text-align: center;">
+                      پیام ارسال شد ! در سریع ترین زمان به شما پاسخ داده خواهد شد!
+                    </div>
+                </form>
+            </div>
+          </div>
+          <div class="contact-info">
+              <h2>اطلاعات تماس</h2>
+              <div class="info-cards">
+                <div class="info-card">
+                  <i class="fas fa-envelope"></i>
+                  <h4>ایمیل</h4>
+                  <p>amirabaspoor14@gmail.com</p>
+                </div>
+                <div class="info-card">
+                  <i class="fas fa-phone-alt"></i>
+                  <h4>شماره تماس</h4>
+                  <p>98-09354629355+</p>
+                </div>
+                <div class="info-card">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <h4>آدرس</h4>
+                  <p>ایران،آذربایجان غربی،ماکو</p>
+                </div>
+                <div class="info-card">
+                  <i class="fab fa-instagram"></i>
+                  <h4>اینستاگرام</h4>
+                  <a href="https://instagram.com/amhosein2854" target="_blank">amhosein2854@</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer-content">
+        <div class="footer-text-box">
+          <p> 2025 &copy; amir.dev |تمامی حقوق این سایت محفوض می باشد</p>
+        </div>
+    </footer>
+
+      <script>
+      const menu = document.querySelector(".title-hidden-box");
+      const btn = document.querySelector(".title-btn-hmr");
+      const overlay = document.querySelector('.overlay');
+
+      btn.addEventListener("click", ()=>{
+        menu.classList.toggle('show');
+        overlay.classList.toggle('show');
+      });
+
+      overlay.addEventListener('click', () => {
+        menu.classList.remove('show');
+        overlay.classList.remove('show');
+      });
+
+  const form = document.getElementById('form-detail-box');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      successMessage.style.display = 'block';
+      form.reset();                          
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 4000);
+    } else {
+      alert('خطایی رخ داد. لطفا دوباره تلاش کنید.');
+    }
+  });
+      </script>
+</body>
+</html>
